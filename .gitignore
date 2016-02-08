@@ -1,0 +1,5 @@
+*.json
+*.swp
+*.csv
+*.txt
+node_modules/
