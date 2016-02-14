@@ -4,10 +4,16 @@ var $ = require('jquery');
 var express = require('express');
 var app = express();
 
+const http = require('http');
 const https = require('https');
 
+var privateKey = fs.readFileSync('sslcert/server.key', 'utf-8');
+var certificate = fs.readFileSync('sslcert/server.crt', 'utf-8');
+var credentials = {key: privateKey, cert: certificate};
+
 const hostname = 'localhost';
-const port = process.env.PORT || 8080;
+const httpPort = process.env.PORT || 8080;
+const httpsPort = process.env.PORT || 6339;
 
 app.get('/', function(req, res) {
   var theHtml = fs.readFileSync('./templates/layout.html');
@@ -56,8 +62,14 @@ var allowCrossDomain = function(req, res, next) {
     }
 };
 
+app.use(express.compress());
 app.use(allowCrossDomain);
 app.use(express.static('public'));
 
-app.listen(port);
+var httpServer = http.createServer(app);
+var httpsServer = https.createServer(credentials, app);
+
+httpServer.listen(httpPort);
+httpsServer.listen(httpsPort);
+//app.listen(port);
 console.log('Server running'/* at https://${hostname}:${port}/*/);
