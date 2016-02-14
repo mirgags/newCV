@@ -37,6 +37,13 @@ app.get('/stuff', function(req, res) {
   res.end();
 });
 
+app.get('/resume', function(req, res) {
+  var theHtml = fs.readFileSync('./templates/resume.html');
+  res.writeHeader(200, {"Content-Type": "text/html"});
+  res.write(theHtml.toString());
+  res.end();
+});
+
 var allowCrossDomain = function(req, res, next) {
     if ('OPTIONS' == req.method) {
       res.header('Access-Control-Allow-Origin', '*');

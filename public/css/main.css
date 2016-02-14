@@ -9,10 +9,25 @@
   text-align: center;
 }
 
+#pageContainer {
+  display: flex;
+  height: 500px;
+}
+
+.container {
+  display: inline-flex;
+}
+
 .regContent {
   color: green;
+  width: 75%;
 }
 
 #headshot {
-  float: right;
+  float: left;
+}
+
+.displayPdf {
+  width: 100%;
+  height: auto;
 }
