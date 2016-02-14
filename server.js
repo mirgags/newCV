@@ -70,6 +70,6 @@ var httpServer = http.createServer(app);
 var httpsServer = https.createServer(credentials, app);
 
 httpServer.listen(httpPort);
-//httpsServer.listen(httpsPort);
+httpsServer.listen(httpsPort);
 //app.listen(port);
-console.log('Server running'/* at https://${hostname}:${port}/*/);
+console.log('Server running');
