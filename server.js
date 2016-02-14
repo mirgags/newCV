@@ -4,7 +4,7 @@ var $ = require('jquery');
 var express = require('express');
 var app = express();
 
-const http = require('http');
+const https = require('https');
 
 const hostname = 'localhost';
 const port = process.env.PORT || 8080;
@@ -60,4 +60,4 @@ app.use(allowCrossDomain);
 app.use(express.static('public'));
 
 app.listen(port);
-console.log('Server running'/* at http://${hostname}:${port}/*/);
+console.log('Server running'/* at https://${hostname}:${port}/*/);
