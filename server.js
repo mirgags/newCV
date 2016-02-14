@@ -59,5 +59,5 @@ var allowCrossDomain = function(req, res, next) {
 app.use(allowCrossDomain);
 app.use(express.static('public'));
 
-app.listen(port);
-console.log(`Server running at http://${hostname}:${port}/`);
+app.listen();
+console.log(`Server running /*at http://${hostname}:${port}/*/`);
