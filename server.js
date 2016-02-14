@@ -7,7 +7,7 @@ var app = express();
 const http = require('http');
 
 const hostname = 'localhost';
-const port = 1337;
+const port = process.env.PORT || 8080;
 
 app.get('/', function(req, res) {
   var theHtml = fs.readFileSync('./templates/layout.html');
@@ -59,5 +59,5 @@ var allowCrossDomain = function(req, res, next) {
 app.use(allowCrossDomain);
 app.use(express.static('public'));
 
-app.listen();
-console.log(`Server running /*at http://${hostname}:${port}/*/`);
+app.listen(port);
+console.log('Server running'/* at http://${hostname}:${port}/*/);
