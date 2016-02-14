@@ -50,6 +50,12 @@ app.get('/resume', function(req, res) {
   res.end();
 });
 
+app.get('/favicon.ico', function(req, res) {
+  var theFavicon = fs.readFileSync('./public/images/favicon.png');
+  res.writeHeader(200, {"Content-Type": "image/png"});
+  res.end(theFavicon);
+});
+
 var allowCrossDomain = function(req, res, next) {
     if ('OPTIONS' == req.method) {
       res.header('Access-Control-Allow-Origin', '*');
