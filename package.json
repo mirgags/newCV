@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "express": "^4.13.4",
+    "handlebars": "^4.0.5",
+    "jquery": "^2.2.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "cv",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
