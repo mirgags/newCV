@@ -62,7 +62,7 @@ var allowCrossDomain = function(req, res, next) {
     }
 };
 
-app.use(express.compress());
+//app.use(express.compress());
 app.use(allowCrossDomain);
 app.use(express.static('public'));
 
