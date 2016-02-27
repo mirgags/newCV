@@ -1,9 +1,23 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: green;
+  font-weight: bold;
+}
+
 #navContainer {
   background-color: #728996;
   height: 50px;
 }
 
-.navItem {
+.navItem:hover {
+  background: gold;
+}
+
+#centerNavItem {
   color: white;
   font-size: large;
   text-align: center;
@@ -11,23 +25,77 @@
 
 #pageContainer {
   display: flex;
-  height: 500px;
+  flex-direction: row;
+  justify-content: flex-start;
+  justify-content: space-between;
+  height: 100%;
+}
+
+#footerContainer {
+  background-color: #b6c7bd;
 }
 
 .container {
-  display: inline-flex;
+  justify-content: inherit;
 }
 
 .regContent {
   color: green;
   width: 75%;
+  background-color: #b6c7bd;
+  order: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.rightNav {
+  width: 25%;
+  order: 1;
+}
+
+#rightNavItem {
+  color: green;
+  font-size: large;
+  text-align: center;
+}
+
+#homeContent {
+  margin: 10px;
+  padding: 10px;
+}
+
+#beach-hero {
+  width: 100%;
+}
+
+#xolosImg, #dubsImg {
+  //width: 300px;
+  height: 200px;
+  order: 2;
+}
+
+#aboutContent {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+  padding: 10px;
+}
+
+.center-hero-unit {
+  order: 0;
 }
 
 #headshot {
-  float: left;
+  max-width: 180px;
+  max-height: 306px;
+  width: auto;
+  height: auto;
+  margin: 10px;
+  padding: 10px;
+  order: 1;
 }
 
 .displayPdf {
   width: 100%;
-  height: auto;
+  height: 500px;
 }

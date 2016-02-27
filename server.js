@@ -2,6 +2,7 @@ var fs = require('fs');
 var handlebars = require('handlebars');
 var $ = require('jquery');
 var express = require('express');
+var favicon = require('serve-favicon');
 var app = express();
 
 const http = require('http');
@@ -45,17 +46,18 @@ app.get('/stuff', function(req, res) {
 
 app.get('/resume', function(req, res) {
   var theHtml = fs.readFileSync('./templates/resume.html');
-  res.writeHeader(200, {"Content-Type": "text/html"});
+  res.writeHeader(200, {"Content-Type": "text/html",
+                        "Accept-Ranges": "bytes"});
   res.write(theHtml.toString());
   res.end();
 });
-
+/*
 app.get('/favicon.ico', function(req, res) {
   var theFavicon = fs.readFileSync('./public/images/favicon.png');
   res.writeHeader(200, {"Content-Type": "image/png"});
   res.end(theFavicon);
 });
-
+*/
 var allowCrossDomain = function(req, res, next) {
     if ('OPTIONS' == req.method) {
       res.header('Access-Control-Allow-Origin', '*');
@@ -71,6 +73,7 @@ var allowCrossDomain = function(req, res, next) {
 //app.use(express.compress());
 app.use(allowCrossDomain);
 app.use(express.static('public'));
+app.use(favicon(__dirname + '/public/favicon.ico'));
 
 var httpServer = http.createServer(app);
 var httpsServer = https.createServer(credentials, app);

@@ -12,13 +12,28 @@
 <div id="navContainer">
   <script id="nav-template" type="x-handlebars-template">
     {{#each this}}
-      <span class="navItem">
+      <span id="centerNavItem" class="navItem">
         {{name}}
       </span>
     {{/each}}
   </script>
 </div>
-<div id="pageContainer"></div>
+<div id="pageContainer">
+  <div class="regContent">
+  </div>
+  <div id="rightNav">
+    <div>
+      <script id="rightNav-template" type="x-handlebars-template">
+        {{#each this}}
+          <div id="rightNavItem" class="navItem">
+            {{name}}
+          </div>
+        {{/each}}
+      </script>
+    </div>
+    <img id="headshot" src="/images/bubblegum.jpg" alt="Marks Face"/>
+  </div>
+</div>
 <div id="footerContainer"></div>
 </body>
 </html>

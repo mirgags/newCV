@@ -2,7 +2,7 @@ $(function () {
   var navList = [
     {name: 'Home'},
     {name: 'About'},
-    {name: 'Stuff'},
+/*    {name: 'Stuff'},*/
     {name: 'Resume'}
   ]
 
@@ -10,9 +10,14 @@ $(function () {
   var template = Handlebars.compile(source);
     
   $("#navContainer").html(template(navList));
-  if($("#pageContainer").text().length < 1) {
+  source = $("#rightNav-template").html();
+  template = Handlebars.compile(source);
+
+  $("#rightNav").html(template(navList));
+ //if($("#pageContainer .regContent").text().length < 4) {
+  if(!$.trim($("#pageContainer .regContent").html()).length) {
     function popHome(data) {
-      $("#pageContainer").empty().html(data);
+      $("#pageContainer .regContent").empty().html(data);
     };
     $.ajax({
       url: "http://" + location.host + "/home",
@@ -24,8 +29,10 @@ $(function () {
 
 function navAdjust() {
   var innerWidth = window.innerWidth;
+
+  $.height = window.innerHeight;
   var $navItems = $(".navItem");
-  var navCount = $navItems.length;
+  var navCount = $navItems.length / 2;
   $navItems.each(function () {
     var tmpWidth = $(this).width();
     var padCalc = ($("#navContainer").width() / navCount) - tmpWidth;
@@ -38,7 +45,7 @@ function navAdjust() {
     theUrl = (theUrl).replace(/\s/g,'');
     $(this).click(function () {
       function getData(data) {
-        $("#pageContainer").empty().html(data);
+        $("#pageContainer .regContent").empty().html(data);
       };
       $.ajax({
         url: theUrl,
@@ -47,6 +54,8 @@ function navAdjust() {
       });
     });
   });
+  //$("#pageContainer").height($.height - $("navContainer").height);
+  //console.log($.height);
 };
 
 function pdfAdjust() {
