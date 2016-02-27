@@ -9,7 +9,7 @@
     "npm": "3.3.12"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node index.js"
   },
   "name": "cv",
   "version": "1.0.0",
