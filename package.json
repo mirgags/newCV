@@ -13,9 +13,13 @@
   },
   "name": "cv",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "index.js",
   "devDependencies": {},
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "A cv for Mark Miraglia",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mirgags/newCV"
+  }
 }
