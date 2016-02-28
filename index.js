@@ -7,11 +7,11 @@ var app = express();
 
 const http = require('http');
 const https = require('https');
-
+/*
 var privateKey = fs.readFileSync('sslcert/server.key', 'utf-8');
 var certificate = fs.readFileSync('sslcert/server.crt', 'utf-8');
 var credentials = {key: privateKey, cert: certificate};
-
+*/
 const hostname = 'localhost';
 const httpPort = process.env.PORT || 8080;
 const httpsPort = process.env.PORT || 6339;
@@ -76,7 +76,7 @@ app.use(express.static('public'));
 app.use(favicon(__dirname + '/public/favicon.ico'));
 
 var httpServer = http.createServer(app);
-var httpsServer = https.createServer(credentials, app);
+//var httpsServer = https.createServer(credentials, app);
 
 httpServer.listen(process.env.PORT || 8080);
 //httpsServer.listen(process.env.PORT || 6339);
