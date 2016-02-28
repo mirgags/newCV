@@ -40,7 +40,7 @@ function navAdjust() {
     $(this).css("padding-right", (padCalc / 2) + 'px');
     var theHost = location.host;
     var thePath = $(this).text().toLowerCase().replace(/\s/g,'');
-    var theUrl = 'http://' + theHost + '/';
+    var theUrl = '//' + theHost + '/';
     theUrl += thePath;
     theUrl = (theUrl).replace(/\s/g,'');
     $(this).click(function () {
