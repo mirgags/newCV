@@ -20,7 +20,7 @@ $(function () {
       $("#pageContainer .regContent").empty().html(data);
     };
     $.ajax({
-      url: "http://" + location.host + "/home",
+      url: "//" + location.host + "/home",
       context: document.body,
       success: popHome
     });
