@@ -53,7 +53,7 @@ a {
   order: 1;
 }
 
-#rightNavItem, #track-duck {
+#rightNavItem {
   color: green;
   font-size: large;
   text-align: center;
