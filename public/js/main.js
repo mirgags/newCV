@@ -14,6 +14,7 @@ $(function () {
   template = Handlebars.compile(source);
 
   $("#rightNav").html(template(navList));
+  $("#rightNav").append('<div id="track-duck"></div>');
  //if($("#pageContainer .regContent").text().length < 4) {
   if(!$.trim($("#pageContainer .regContent").html()).length) {
     function popHome(data) {
