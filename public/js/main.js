@@ -19,6 +19,8 @@ $(function () {
   if(!$.trim($("#pageContainer .regContent").html()).length) {
     function popHome(data) {
       $("#pageContainer .regContent").empty().html(data);
+      //$("#footerContainer").html('<script async src="//cdn.trackduck.com/toolbar/prod/td.js" data-trackduck-id="581bac501816be44752c5c24"></script>"');
+      $("#footerContainer").html('<script type="text/javascript">(function() {var s = document.createElement("script");s.type = "text/javascript";s.async = true;s.src = \'//api.usersnap.com/load/\'+\'ac82192f-9c93-4751-b9c7-d021d99f8cf4.js\';var x = document.getElementsByTagName(\'script\')[0];x.parentNode.insertBefore(s, x);})();</script>';
     };
     $.ajax({
       url: "//" + location.host + "/home",
