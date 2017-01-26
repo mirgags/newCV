@@ -51,7 +51,7 @@ app.get('/resume', function(req, res) {
   res.write(theHtml.toString());
   res.end();
 });
-app.get('/google9c9688917c540c36', function(req, res) {
+app.get('/google9c9688917c540c36.html', function(req, res) {
   var theHtml = fs.readFileSync('./google9c9688917c540c36.html');
   res.writeHeader(200, {"Content-Type": "text/html",
                         "Accept-Ranges": "bytes"});
