@@ -51,6 +51,14 @@ app.get('/resume', function(req, res) {
   res.write(theHtml.toString());
   res.end();
 });
+app.get('/resume', function(req, res) {
+  var theHtml = fs.readFileSync('./templates/resume.html');
+  res.writeHeader(200, {"Content-Type": "text/html",
+                        "Accept-Ranges": "bytes"});
+  res.write(theHtml.toString());
+  res.end();
+});
+
 /*
 app.get('/favicon.ico', function(req, res) {
   var theFavicon = fs.readFileSync('./public/images/favicon.png');
