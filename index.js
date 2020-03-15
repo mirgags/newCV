@@ -16,6 +16,8 @@ const hostname = 'localhost';
 const httpPort = process.env.PORT || 8080;
 const httpsPort = process.env.PORT || 6339;
 
+app.use('/pdf', express.static(__dirname + '/public/pdf'));
+
 app.get('/', function(req, res) {
   var theHtml = fs.readFileSync('./templates/layout.html');
   res.writeHeader(200, {"Content-Type": "text/html"});
