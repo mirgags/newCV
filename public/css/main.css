@@ -45,6 +45,7 @@ a {
 .regContent {
   color: green;
   width: 75%;
+  height: 100%;
   background-color: #b6c7bd;
   order: 0;
   display: flex;
