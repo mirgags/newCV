@@ -1,8 +1,9 @@
 {
   "dependencies": {
     "express": "^4.13.4",
-    "handlebars": "^4.0.5",
-    "jquery": "^3.0.0",
+    "handlebars": "^4.7.6",
+    "jquery": "^3.5.1",
+    "mailgun.js": "^2.0.1",
     "serve-favicon": "^2.3.0"
   },
   "engines": {
@@ -15,7 +16,10 @@
   "name": "cv",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "express": "^4.13.4",
+    "serve-favicon": "^2.3.0"
+},
   "author": "",
   "license": "ISC",
   "description": "A cv for Mark Miraglia",
